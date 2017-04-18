@@ -1,0 +1,30 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="panel">
+  <input type="number" id="sizeInput" placeholder="# of points"/>
+  <select id="librarySelect">
+    <option value="chartjs">ChartJS</option>
+    <option value="canvasjs">CanvasJS</option>
+  </select>
+  <button onclick="draw()">Generate</button>
+</div>
+
+
+<div id="chartContainer"></div>
+
+<div id="perfTest">
+
+</div>
+
+<script src="Chart.bundle.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="d3.min.js"></script>
+<script src="canvasjs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
