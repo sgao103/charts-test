@@ -1,19 +1,21 @@
 /**
  * Created by Song on 4/18/2017.
  */
-let ctx = document.getElementById('myChart');
 
-let data = [];
+declare let d3: any;
+declare let $: any;
+declare let CanvasJS: any;
+declare let Chart: any;
 
-const XLIMIT = 1000000;
-const YLIMIT = 1000000;
+const X_LIMIT = 1000000;
+const Y_LIMIT = 1000000;
 
 class Point {
   x: number;
   y: number;
   constructor() {
-    this.x = Math.round((Math.random() * XLIMIT));
-    this.y = Math.round((Math.random() * YLIMIT));
+    this.x = Math.round((Math.random() * X_LIMIT));
+    this.y = Math.round((Math.random() * Y_LIMIT));
   }
 }
 
@@ -54,8 +56,8 @@ function drawD3(data: Point[]): void {
   let context = chart.node().getContext("2d");
 
   let scale = d3.scaleLinear()
-    .range([0, YLIMIT])
-    .domain([0, XLIMIT]);
+    .range([0, Y_LIMIT])
+    .domain([0, X_LIMIT]);
 
   data.forEach(function(d, i) {
     context.beginPath();

@@ -1,14 +1,12 @@
 /**
  * Created by Song on 4/18/2017.
  */
-var ctx = document.getElementById('myChart');
-var data = [];
-var XLIMIT = 1000000;
-var YLIMIT = 1000000;
+var X_LIMIT = 1000000;
+var Y_LIMIT = 1000000;
 var Point = (function () {
     function Point() {
-        this.x = Math.round((Math.random() * XLIMIT));
-        this.y = Math.round((Math.random() * YLIMIT));
+        this.x = Math.round((Math.random() * X_LIMIT));
+        this.y = Math.round((Math.random() * Y_LIMIT));
     }
     return Point;
 }());
@@ -42,8 +40,8 @@ function drawD3(data) {
         .attr("height", 800);
     var context = chart.node().getContext("2d");
     var scale = d3.scaleLinear()
-        .range([0, YLIMIT])
-        .domain([0, XLIMIT]);
+        .range([0, Y_LIMIT])
+        .domain([0, X_LIMIT]);
     data.forEach(function (d, i) {
         context.beginPath();
         context.rect(scale(d.x), scale(d.y), 10, 10);
@@ -138,3 +136,4 @@ $(document).ready(function () {
         setTimeout(stepFn, 10);
     }
 });
+//# sourceMappingURL=script.js.map
